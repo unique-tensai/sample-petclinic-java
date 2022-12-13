@@ -1,3 +1,2 @@
 FROM openjdk:11
-
-CMD ["catalina.sh", "run"]
+COPY spring-petclinic-2.7.3.jar /usr/src/app/
