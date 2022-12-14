@@ -1,6 +1,5 @@
-FROM maven:latest
-RUN mkdir -p /usr/share/sampleapp
-COPY ./* /usr/share/sampleapp
-WORKDIR /usr/share/sampleapp
-RUN mvn package -DskipTests
-CMD ["java", "-jar", "./target/spring-petclinic-2.7.3.jar"]
+FROM openjdk:11
+COPY target/spring-petclinic-2.7.3.jar /usr/src/app/
+WORKDIR /usr/src/app
+EXPOSE 8080
+CMD java -jar spring-petclinic-2.7.3.jar
