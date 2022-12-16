@@ -1,6 +1,6 @@
 FROM maven:latest
 RUN mkdir -p /usr/share/sampleapp
-COPY ./* /usr/share/sampleapp
+COPY ./* /usr/share/sampleapp/
 WORKDIR /usr/share/sampleapp
 RUN mvn package -DskipTests
 RUN mvn sonar:sonar \
