@@ -3,4 +3,9 @@ RUN mkdir -p /usr/share/sampleapp
 COPY ./* /usr/share/sampleapp
 WORKDIR /usr/share/sampleapp
 RUN mvn package -DskipTests
+RUN mvn sonar:sonar \
+  -Dsonar.projectKey=devtron \
+  -Dsonar.host.url=https://nxgendevops-sonarqube.eastus.cloudapp.azure.com \
+  -Dsonar.login=8f4eac999f78c082e0942df4b125b5da72b9a997
 CMD ["java", "-jar", "./target/spring-petclinic-2.7.3.jar"]
+
