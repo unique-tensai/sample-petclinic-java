@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: sample-petclinic
-          image: devopsagilitydev.azurecr.io/petclinic:latest
+          image: devopsagilitydev.azurecr.io/petclinic:3.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
